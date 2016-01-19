@@ -17,7 +17,7 @@ module.exports = function(grunt) {
 	@toc 2.
 	*/
 	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -88,13 +88,14 @@ module.exports = function(grunt) {
 					dest:   'tiny-calendar.min.js'
 				}
 			},
-			less: {
+			sass: {
 				development: {
 					options: {
+						sourceMap: true
 					},
 					files: {
-						"main.css": "_base.less",
-						"tiny-calendar.css": "_tiny-calendar.less"
+						"main.css": "base.scss",
+						"tiny-calendar.css": "tiny-calendar.scss"
 					}
 				}
 			},
@@ -119,8 +120,8 @@ module.exports = function(grunt) {
 		@toc 6.
 		*/
 		// Default task(s).
-		// grunt.registerTask('default', ['jshint:beforeconcat', 'less:development', 'concat:devJs', 'concat:devCss']);
-		grunt.registerTask('default', ['jshint:beforeconcatQ', 'less:development', 'cssmin', 'uglify:build']);
+		// grunt.registerTask('default', ['jshint:beforeconcat', 'sass:development', 'concat:devJs', 'concat:devCss']);
+		grunt.registerTask('default', ['jshint:beforeconcatQ', 'sass:development', 'cssmin', 'uglify:build']);
 	
 	}
 	init({});		//initialize here for defaults (init may be called again later within a task)

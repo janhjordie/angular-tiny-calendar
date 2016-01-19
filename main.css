@@ -1,0 +1,109 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,700);
+.tc-container {
+  width: 100%;
+  max-width: 300px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .tc-container .tc-header {
+    line-height: 2em;
+    font-size: 1em;
+    height: 2em;
+    position: relative; }
+    .tc-container .tc-header .tc-navigation {
+      position: absolute;
+      top: 0;
+      right: 0; }
+      .tc-container .tc-header .tc-navigation button {
+        cursor: pointer;
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        font-size: 0.8em;
+        line-height: 0.8em; }
+        .tc-container .tc-header .tc-navigation button:hover {
+          color: #009688; }
+  .tc-container .tc-days-name .tc-day-name {
+    width: 14.2857142857%;
+    display: inline-block;
+    text-align: center;
+    margin: 10px 0 0 0;
+    padding: 5px 0;
+    font-size: small;
+    border-top: 1px solid #ccc; }
+  .tc-container .tc-days {
+    border: 1px solid #ccc;
+    border-width: 1px 0; }
+    .tc-container .tc-days .tc-day {
+      width: 14.2857142857%;
+      display: inline-block;
+      height: 2em;
+      line-height: 2em;
+      text-align: center;
+      cursor: pointer; }
+      .tc-container .tc-days .tc-day:hover {
+        background-color: rgba(0, 150, 136, 0.1); }
+      .tc-container .tc-days .tc-day.differentMonth {
+        color: #aaa; }
+      .tc-container .tc-days .tc-day.today {
+        color: #009688; }
+      .tc-container .tc-days .tc-day.hasEvents {
+        font-weight: bold; }
+      .tc-container .tc-days .tc-day.selected {
+        background-color: #009688;
+        color: #fff;
+        outline: none; }
+  .tc-container .tc-focus ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%; }
+    .tc-container .tc-focus ul li {
+      padding: 5px 0;
+      font-size: small;
+      border-bottom: 1px solid #ccc; }
+      .tc-container .tc-focus ul li span {
+        padding: 8px 10px; }
+        .tc-container .tc-focus ul li span.tc-time {
+          display: inline-block;
+          text-align: right;
+          border-right: 2px solid #009688;
+          font-size: smaller;
+          width: 65px; }
+
+body {
+  color: #787878;
+  font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+.container {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+  max-width: 700px; }
+  .container .header {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid whitesmoke;
+    padding: 2rem 0; }
+    .container .header h1,
+    .container .header h2 {
+      text-align: center;
+      font-weight: 300; }
+    .container .header h1 {
+      font-size: 2.5em;
+      margin-bottom: 1rem; }
+    .container .header h2 {
+      font-size: 1.4em; }
+  .container .calendar-container {
+    margin: 0 auto; }
+
+pre {
+  padding: 1em;
+  background-color: whitesmoke;
+  font-size: 0.9em; }
+
+.tc-container {
+  margin-bottom: 3em; }
+
+a {
+  color: #009688;
+  text-decoration: none; }
+
+/*# sourceMappingURL=main.css.map */

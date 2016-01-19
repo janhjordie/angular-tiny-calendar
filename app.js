@@ -6,7 +6,7 @@
 'use strict';
 
 angular.module('myApp', [
-'ngRoute', 'ngSanitize', 'ngTouch', 'ngAnimate',		//additional angular modules
+'ngRoute', 'ngSanitize', 'ngTouch', 'ngAnimate', 'angularMoment',		//additional angular modules
 'camilloaddis.angular-tiny-calendar'
 ]).
 config(['$routeProvider', '$locationProvider', '$compileProvider', function($routeProvider, $locationProvider, $compileProvider) {
