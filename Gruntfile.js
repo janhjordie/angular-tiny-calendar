@@ -23,6 +23,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-karma');
 
+
 	/**
 	Function that wraps everything to allow dynamically setting/changing grunt options and config later by grunt task. This init function is called once immediately (for using the default grunt options, config, and setup) and then may be called again AFTER updating grunt (command line) options.
 	@toc 3.
@@ -34,33 +35,34 @@ module.exports = function(grunt) {
 		@toc 5.
 		*/
 		grunt.initConfig({
+			dist: './',
 			concat: {
 				devCss: {
-					src:    [],
-					dest:   []
+					src: [],
+					dest: []
 				}
 			},
 			jshint: {
 				options: {
 					//force:          true,
-					globalstrict:   true,
+					globalstrict: true,
 					//sub:            true,
 					node: true,
 					loopfunc: true,
-					browser:        true,
-					devel:          true,
+					browser: true,
+					devel: true,
 					globals: {
-						angular:    false,
-						$:          false,
-						moment:		false,
+						angular: false,
+						$: false,
+						moment: false,
 						Pikaday: false,
 						module: false,
 						forge: false
 					}
 				},
-				beforeconcat:   {
+				beforeconcat: {
 					options: {
-						force:	false,
+						force: false,
 						ignores: ['**.min.js']
 					},
 					files: {
@@ -68,9 +70,9 @@ module.exports = function(grunt) {
 					}
 				},
 				//quick version - will not fail entire grunt process if there are lint errors
-				beforeconcatQ:   {
+				beforeconcatQ: {
 					options: {
-						force:	true,
+						force: true,
 						ignores: ['**.min.js']
 					},
 					files: {
@@ -83,9 +85,9 @@ module.exports = function(grunt) {
 					mangle: false
 				},
 				build: {
-					files:  {},
-					src:    'tiny-calendar.js',
-					dest:   'tiny-calendar.min.js'
+					files: {},
+					src: 'tiny-calendar.js',
+					dest: 'tiny-calendar.min.js'
 				}
 			},
 			sass: {
@@ -104,7 +106,8 @@ module.exports = function(grunt) {
 					src: ['tiny-calendar.css'],
 					dest: 'tiny-calendar.min.css'
 				}
-			}/*,
+			}
+			/*,
 			karma: {
 				unit: {
 					configFile: publicPathRelativeRoot+'config/karma.conf.js',
@@ -113,8 +116,8 @@ module.exports = function(grunt) {
 				}
 			}*/
 		});
-		
-		
+
+
 		/**
 		register/define grunt tasks
 		@toc 6.
@@ -122,8 +125,8 @@ module.exports = function(grunt) {
 		// Default task(s).
 		// grunt.registerTask('default', ['jshint:beforeconcat', 'sass:development', 'concat:devJs', 'concat:devCss']);
 		grunt.registerTask('default', ['jshint:beforeconcatQ', 'sass:development', 'cssmin', 'uglify:build']);
-	
+
 	}
-	init({});		//initialize here for defaults (init may be called again later within a task)
+	init({}); //initialize here for defaults (init may be called again later within a task)
 
 };

@@ -45,9 +45,9 @@ angular.module('camilloaddis.angular-tiny-calendar', []).directive('tinyCalendar
     }
 
     function buildMonth(start, events, firstDay) {
-    	if(!firstDay || isNaN(firstDay)){
-    		firstDay = 0;
-    	}
+        if(!firstDay || isNaN(firstDay)){
+            firstDay = 0;
+        }
         var days = [];
         var date = removeTime(start.clone().date(0).day(firstDay));
         for (var i = 0; i < 42; i++) {
@@ -65,9 +65,9 @@ angular.module('camilloaddis.angular-tiny-calendar', []).directive('tinyCalendar
 
 
     function addEvents(month, events) {
-    	if(!events){
-    		return month;
-    	}
+        if(!events){
+            return month;
+        }
         return month.map(function(day) {
             var ev = [];
             var d = moment(day.date);
@@ -95,10 +95,10 @@ angular.module('camilloaddis.angular-tiny-calendar', []).directive('tinyCalendar
         // replace: true,
         template: function(element, attrs) {
             var defaultsAttrs = {
-            	weekDays : 'SMTWTFS',
-            	today: 'today',
-            	allDayLabel : 'All day',
-            	firstDay: 0
+                weekDays : 'SMTWTFS',
+                today: 'today',
+                allDayLabel : 'All day',
+                firstDay: 0
             };
             for (var xx in defaultsAttrs) {
                 if (attrs[xx] === undefined) {
@@ -108,32 +108,32 @@ angular.module('camilloaddis.angular-tiny-calendar', []).directive('tinyCalendar
 
             attrs.weekDays = attrs.weekDays.split('').slice(0,7);
             if(attrs.firstDay){
-            	attrs.weekDays = attrs.weekDays.slice(attrs.firstDay).concat(attrs.weekDays.slice(0, attrs.firstDay));
+                attrs.weekDays = attrs.weekDays.slice(attrs.firstDay).concat(attrs.weekDays.slice(0, attrs.firstDay));
             }
             attrs.weekDays = '[' + attrs.weekDays.map(function(day){
-            	return '"'+day+'"';
+                return '"'+day+'"';
             }).join(',').replace('"', '&quot;') + ']';
 
-			var html =	"<div class='tc-container'>";
-				html+=		"<div class='tc-header'>{{currentMonth.format('MMMM YYYY')}}";
-				html+=			"<div class='tc-navigation'>";
-				html+=				"<button ng-click='previous()'>«</button>";
-				html+=				"<button ng-click='today()'>"+attrs.today+"</button>";
-				html+=				"<button ng-click='next()'>»</button>";
-				html+=			"</div>";
-				html+=		"</div>";
-				html+=		"<div class='tc-days-name'>";
-				html+=			"<div class='tc-day-name' ng-repeat='wd in "+attrs.weekDays+" track by $index'>{{wd}}</div>";
-				html+=		"</div>";
-				html+=		"<div class='tc-days'>";
-				html+=			"<div ng-repeat='day in month' class='tc-day' ng-class='{ today: day.isToday, differentMonth: !day.isCurrentMonth, selected: day.date === selected.date, hasEvents: day.events.length > 0}' ng-click='select(day)'>{{day.number}}</div>";
-				html+=		"</div>";
-				html+=		"<div class='tc-focus' ng-show='selected.events'>";
-				html+=			"<ul>";
-				html+=				"<li ng-repeat='e in selected.events | orderBy:&quot;date&quot;'><span class='tc-time' ng-show='e.time'>{{e.time}}</span><span class='tc-time' ng-hide='e.time'>"+attrs.allDayLabel+"</span><span class='tc-title' ng-bind-html='e.title'></span></li>";
-				html+=			"</ul>";
-				html+=		"</div>";
-				html+=	"</div>";
+            var html =  "<div class='tc-container'>";
+                html+=      "<div class='tc-header'>{{currentMonth.format('MMMM YYYY')}}";
+                html+=          "<div class='tc-navigation'>";
+                html+=              "<button ng-click='previous()'>«</button>";
+                html+=              "<button ng-click='today()'>"+attrs.today+"</button>";
+                html+=              "<button ng-click='next()'>»</button>";
+                html+=          "</div>";
+                html+=      "</div>";
+                html+=      "<div class='tc-days-name'>";
+                html+=          "<div class='tc-day-name' ng-repeat='wd in "+attrs.weekDays+" track by $index'>{{wd}}</div>";
+                html+=      "</div>";
+                html+=      "<div class='tc-days'>";
+                html+=          "<div ng-repeat='day in month' class='tc-day' ng-class='{ today: day.isToday, differentMonth: !day.isCurrentMonth, selected: day.date === selected.date, hasEvents: day.events.length > 0}' ng-click='select(day)'>{{day.number}}</div>";
+                html+=      "</div>";
+                html+=      "<div class='tc-focus' ng-show='selected.events'>";
+                html+=          "<ul>";
+                html+=              "<li ng-repeat='e in selected.events | orderBy:&quot;date&quot;'><span class='tc-time' ng-show='e.time'>{{e.time}}</span><span class='tc-time' ng-hide='e.time'>"+attrs.allDayLabel+"</span><span class='tc-title' ng-bind-html='e.title'></span></li>";
+                html+=          "</ul>";
+                html+=      "</div>";
+                html+=  "</div>";
 
             return html;
         },
@@ -165,14 +165,14 @@ angular.module('camilloaddis.angular-tiny-calendar', []).directive('tinyCalendar
                 };
 
                 scope.previous = function() {
-                	scope.selected = null;
+                    scope.selected = null;
                     scope.currentMonth.subtract(1, 'months');
                     scope.month = buildMonth(scope.currentMonth, scope.events);
 
                 };
 
                 scope.next = function() {
-                	scope.selected = null;
+                    scope.selected = null;
                     scope.currentMonth.add(1, 'months');
                     scope.month = buildMonth(scope.currentMonth, scope.events);
                 };
