@@ -1,0 +1,29 @@
+<a href="https://github.com/camilloaddis/angular-tiny-calendar"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+<div class="container">
+    <div class="header">
+        <h1>Angular Tiny Calendar</h1>
+        <h2>A small calendar directive, which can also handle events</h2>
+    </div>
+    <div class="" ng-controller='HomeCtrl'>
+    	<h2>Installation</h2>
+    	<p>For all information about installation visit <a href="https://github.com/camilloaddis/angular-tiny-calendar">the github repo</a>.</p>
+    	<h2>Usage</h2>
+    	<h4>Basic</h4>
+        <p>Basic usage with default options (English language, first day is Sunday)</p>
+        <pre>&lt;div tiny-calendar&gt;&lt;/div&gt;</pre>
+        <div tiny-calendar></div>
+        <h4>Start on Monday</h4>
+        <p>Changing first day (0 = Sunday, 1 = Monday …)</p>
+        <pre>&lt;div tiny-calendar first-day="1"&gt;&lt;/div&gt;</pre>
+        <div tiny-calendar first-day="1"></div>
+        <h4>Localization</h4>
+        <p>Changing first day, setting custom labels for days and "today" button</p>
+        <pre>&lt;div tiny-calendar first-day="1" week-days='DLMMGVS' today="oggi"&gt;&lt;/div&gt;</pre>
+        <div tiny-calendar first-day="1" week-days='DLMMGVS' today="oggi"></div>
+        <h4>Adding events</h4>
+        <p>Every event *must* have a title and a startDate. It is also possible to add the time of the event and the endDate</p>
+        <pre>&lt;div tiny-calendar events="events"&gt;&lt;/div&gt;
+        <br>events: {{eventsDisplay}}</pre>
+        <div tiny-calendar first-day="1" week-days='DLMMGVS' today="oggi" events="events"></div>
+    </div>
+</div>
