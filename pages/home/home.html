@@ -2,7 +2,7 @@
 <div class="container">
     <div class="header">
         <h1>Angular Tiny Calendar</h1>
-        <h2>A small calendar directive, which can also handle events</h2>
+        <h2>A (very) small calendar directive, which can also handle events</h2>
     </div>
     <div class="" ng-controller='HomeCtrl'>
     	<h2>Installation</h2>
@@ -24,6 +24,6 @@
         <p>Every event *must* have a title and a startDate. It is also possible to add the time of the event and the endDate</p>
         <pre>&lt;div tiny-calendar events="events"&gt;&lt;/div&gt;
         <br>events: {{eventsDisplay}}</pre>
-        <div tiny-calendar first-day="1" week-days='DLMMGVS' today="oggi" events="events"></div>
+        <div tiny-calendar events="events"></div>
     </div>
 </div>
