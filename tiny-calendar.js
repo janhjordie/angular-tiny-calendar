@@ -65,7 +65,8 @@ angular.module('angular-tiny-calendar', []).directive('tinyCalendar', [ function
     return {
         restrict: 'A',
         scope: {
-            events: '='
+            events: '=',
+            selected : '='
         },
 
         // replace: true,
